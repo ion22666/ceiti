@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<style>
+    table,
+    th,
+    td,
+    tr {
+        border: 4px solid black;
+    }
+</style>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Task List</title>
+    </head>
+    <body>
+        <a href="/">Mergi inapoi</a>
+        <h3>Lista Apartamentelor</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>ETAJ</th>
+                <th>PRET</th>
+                <th>AGENT</th>
+                <th></th>
+            </tr>
+            {% for apartament in apartamente %}
+            <tr>
+                <td>{{ apartament.id }}</td>
+                <td>{{ apartament.etaj }}</td>
+                <td>{{ apartament.pret }}</td>
+                <td>{{ apartament.agent.nume }}</td>
+                <td>
+                    <a href="/apartamente/{{apartament.id}}/update">Update</a>
+                    <a href="/apartamente/{{apartament.id}}/delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p><a href="/apartamente/create"> + Add A New Task</a></p>
+    </body>
+</html>

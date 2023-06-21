@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<form method="post">
+    {% csrf_token %}
+    <p>Esti sigur ca vrei sa stergi acest apartamentul cu id-ul <span style="color: blue"> {{ apartament.id }}</span>?</p>
+    <input type="submit" value="Confirm" />
+</form>
