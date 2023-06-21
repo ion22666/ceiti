@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<form method="post">
+    {% csrf_token %}
+    <p>Esti sigur ca vrei sa stergi acest agent cu id-ul <span style="color: blue"> {{ agent.id }}</span>?</p>
+    <input type="submit" value="Confirm" />
+</form>

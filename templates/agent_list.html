@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<style>
+    table,
+    th,
+    td,
+    tr {
+        border: 4px solid black;
+    }
+</style>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Lista Agneti</title>
+    </head>
+    <body>
+        <a href="/">Mergi inapoi</a>
+        <h3>Lista Agenti</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nume</th>
+                <th>Prenume</th>
+                <th>Varsta</th>
+                <th>Telefon</th>
+                <th></th>
+            </tr>
+            {% for agent in agenti %}
+            <tr>
+                <td>{{ agent.id }}</td>
+                <td>{{ agent.nume }}</td>
+                <td>{{ agent.prenume }}</td>
+                <td>{{ agent.varsta }}</td>
+                <td>{{ agent.telefon }}</td>
+                <td>
+                    <a href="/agenti/{{agent.id}}/update">Actualizeaza</a>
+                    <a href="/agenti/{{agent.id}}/delete">Sterge</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p><a href="/agenti/create"> + Adauga Agent Nou</a></p>
+    </body>
+</html>

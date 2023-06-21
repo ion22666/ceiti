@@ -10,7 +10,7 @@ class Agent(models.Model):
         return self.nume + self.prenume
     
 class Apartament(models.Model):
-    etaj = models.IntegerField( )
+    etaj = models.IntegerField()
     nrCamere = models.IntegerField()
     pret = models.IntegerField()
     metriPatrati = models.IntegerField()

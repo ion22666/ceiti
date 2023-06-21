@@ -4,18 +4,17 @@ from django.urls import path, re_path
 from . import views
 
 # namespace
-app_name = 'agent'
 
 urlpatterns = [
-    path('create/', views.AgentCreateView.as_view(), name='agent_create'),
+    path('create/', views.AgentCreateView.as_view()),
     # Retrieve agent list
-    path('', views.AgentListView.as_view(), name='agent_list'),
+    path('', views.AgentListView.as_view()),
     # Retrieve single agent object
-    re_path(r'^(?P<pk>\d+)/$', views.AgentDetailView.as_view(), name='agent_detail'),
+    re_path(r'^(?P<pk>\d+)/$', views.AgentDetailView.as_view()),
     # Update a agent
-    re_path(r'^(?P<pk>\d+)/update/$', views.AgentUpdateView.as_view(), name='agent_update'),
+    re_path(r'^(?P<pk>\d+)/update/$', views.AgentUpdateView.as_view()),
     # Delete a agent
-    re_path(r'^(?P<pk>\d+)/delete/$', views.AgentDeleteView.as_view(), name='agent_delete')
+    re_path(r'^(?P<pk>\d+)/delete/$', views.AgentDeleteView.as_view())
 
     # # Create a agent
     # path('create/', views.agent_create, name='agent_create'),

@@ -85,22 +85,46 @@ class ApartamentDeleteView(generic.DeleteView):
 
 # AGENTI
 class AgentListView(generic.ListView):
+    template_name  = 'agent_list.html'
+    template_name_suffix = ''
     model = Agent
-    context_object_name = 'agents'
+    context_object_name = 'agenti'
+
+    
+
+    # def get_queryset(self):
+    #     # Get the value of the request parameter
+    #     status_param = self.request.GET.get('status') 
+
+    #     # Modify the queryset to select specific agents
+    #     queryset = super().get_queryset()
+    #     # Add your filtering logic here to select specific agents
+    #     queryset = queryset.filter(varsta = 66)
+    #     queryset = queryset.filter(number_field__gt=10, number_field__lt=20)
+    #     return queryset
+
+
 
 class AgentDetailView(generic.DetailView):
     model = Agent
+    context_object_name = 'agent'
+    template_name  = 'agent_detail.html'
+
 
 class AgentCreateView(generic.CreateView):
     model = Agent
     form_class = AgentForm
-    success_url = reverse_lazy('agent_list.html')
+    template_name  = 'agent_form.html'
+
+    success_url = '/agenti'
 
 class AgentUpdateView(generic.UpdateView):
     model = Agent
     form_class = AgentForm
-    success_url = reverse_lazy('agent_list.html')
+    template_name  = 'agent_form.html'
+    success_url = '/agenti'
 
 class AgentDeleteView(generic.DeleteView):
     model = Agent
-    success_url = reverse_lazy('agent_list.html')
+    template_name  = 'agent_confirm_delete.html'
+    success_url = '/agenti'

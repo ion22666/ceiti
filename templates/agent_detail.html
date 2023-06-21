@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Detalii Agent</title>
+    </head>
+    <body>
+        <div>Nume: {{agent.nume}}</div>
+        <div>Prenume: {{agent.nume}}</div>
+        <div>Varsta {{agent.nume}}:</div>
+        <div>Numar Telefon: {{agent.nume}}</div>
+
+
+        <button onclick="()=>window.location.pathname = '/apartamente/{{task.id}}/delete'">
+            Delete
+        </button>
+        <p>
+            Apartament: {{ task.name }} | <a href="{% url 'tasks:task_update' task.id %}">Update</a> |
+            <a href="{% url 'tasks:task_delete' task.id %}">Delete</a>
+        </p>
+        <p>Apartament: {{ task.get_status_display }}</p>
+        <p>
+            <a href="{% url 'tasks:task_list' %}">View All Tasks</a> |
+            <a href="{% url 'tasks:task_create'%}">New Task</a>
+        </p>
+    </body>
+</html>
